@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Mini Store | Cart</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+    </head>
+<body data-page="cart">
+    <header>
+        <a class="brand" href="products.html">🛍 Mini Store</a>
+        <nav>
+            <a href="products.html">Products</a>
+            <a class="active" href="cart.html">Cart (<span class="cart-count">0</span>)</a>
+            <a href="checkout.html">Checkout</a>
+        </nav>
+    </header>
+<main class="wrap narrow">
+    <small>YOUR PICKS</small>
+    <h1>Shopping Cart</h1>
+    <p class="muted">Review your items and change quantities before checkout.</p>
+<div id="cartItems">
+
+</div>
+<div id="emptyCart" class="empty hidden">
+    <div class="big">🛒</div>
+    <h2>Your cart is empty</h2>
+    <p>Add products and they will appear here.</p>
+    <a class="btn" href="products.html">Browse products</a>
+</div>
+<section id="cartSummary" class="panel">
+    <label for="coupon">Coupon code</label>
+    +
+    <div class="coupon">
+        <input id="coupon" placeholder="Try SAVE10">
+        <button class="btn" id="applyCoupon">Apply</button>
+    </div>
+    <p id="couponMessage" class="message"></p>
+    <div class="line">
+        <span>Subtotal</span>
+        <b id="subtotal">0 EGP</b>
+    </div>
+    <div class="line">
+        <span>Discount</span>
+        <b id="discount">0 EGP</b>
+    </div><div class="line total">
+        <span>Total</span>
+        <b id="total">0 EGP</b>
+    </div><a id="checkoutLink" class="btn wide" href="checkout.html">Continue to checkout →</a>
+    <a class="back" href="products.html">← Continue shopping</a>
+</section>
+</main>
+<footer>Mini Store • JavaScript learning project</footer>
+</body></html>

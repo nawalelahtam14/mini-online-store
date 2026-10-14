@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mini Store | Products</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body data-page="products">
+
+  <!-- ================= شريط التنقل العلوي ================= -->
+  <header>
+    <a class="brand" href="products.html"> Mini Store</a>
+    <nav>
+      <a class="active" href="products.html">Products</a>
+      <a href="cart.html">Cart (<span class="cart-count">0</span>)</a>
+      <a href="checkout.html">Checkout</a>
+    </nav>
+  </header>
+
+  <!-- ================= المحتوى الرئيسي لصفحة المنتجات ================= -->
+  <main class="wrap">
+    
+    <!-- قسم الواجهة الترحيبية (Hero Section) -->
+    <section class="hero">
+      <div>
+        <small>SMART SHOPPING, SIMPLE PRICES</small>
+        <h1>Find your next favorite thing.</h1>
+        <p>School supplies, books and useful accessories — all in one place.</p>
+        <a class="btn light" href="#products">Shop products ↓</a>
+      </div>
+     
+    </section>
+
+    <!-- قسم عرض المنتجات والتحكم بها -->
+    <section id="products">
+      
+      <!-- عنوان القسم وعدد المنتجات -->
+      <div class="heading">
+        <div>
+          <small>OUR COLLECTION</small>
+          <h2>Products</h2>
+        </div>
+        <span id="productCount"></span>
+      </div>
+
+      <!-- شريط الأدوات (البحث، التصفية حسب الفئة، والترتيب) -->
+      <div class="toolbar">
+        <input id="search" placeholder="🔎 Search products...">
+        
+        <select id="category">
+          <option value="All">All categories</option>
+          <option>School</option>
+          <option>Books</option>
+          <option>Electronics</option>
+          <option>Art</option>
+          <option>Accessories</option>
+        </select>
+
+        <select id="sort">
+          <option value="default">Recommended</option>
+          <option value="low">Price: low to high</option>
+          <option value="high">Price: high to low</option>
+          <option value="name">Name: A to Z</option>
+        </select>
+      </div>
+
+      <!-- شبكة عرض المنتجات (تُعبأ ديناميكياً بواسطة الجافاسكريبت) -->
+      <div id="productsGrid" class="grid"></div>
+      
+      <!-- رسالة تظهر في حال عدم وجود نتائج مطابقة للبحث -->
+      <p id="noProducts" class="empty hidden">No products found. Try another search.</p>
+      
+    </section>
+
+  </main>
+
+  <!-- ================= تذييل الصفحة ================= -->
+  <footer>Mini Store • JavaScript learning project</footer>
+
+</body>
+</html>

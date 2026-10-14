@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mini Store | Checkout</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body data-page="checkout">
+
+  <!-- ================= شريط التنقل العلوي ================= -->
+  <header>
+    <a class="brand" href="products.html">🛍 Mini Store</a>
+    <nav>
+      <a href="products.html">Products</a>
+      <a href="cart.html">Cart (<span class="cart-count">0</span>)</a>
+      <a class="active" href="checkout.html">Checkout</a>
+    </nav>
+  </header>
+
+  <!-- ================= المحتوى الرئيسي لصفحة الدفع ================= -->
+  <main class="wrap">
+    <small>ALMOST THERE</small>
+    <h1>Checkout</h1>
+    <p class="muted">Enter your details to place a demo order.</p>
+
+    <!-- حاوية نموذج الدفع وملخص الطلب -->
+    <div class="checkout">
+      
+      <!-- قسم معلومات العميل ونموذج الإدخال -->
+      <section class="panel">
+        <h2>Customer information</h2>
+        <form id="checkoutForm">
+          
+          <label for="name">Full name *</label>
+          <input id="name" required minlength="2" placeholder="Your full name">
+
+          <label for="email">Email (optional)</label>
+          <input id="email" type="email" placeholder="name@example.com">
+
+          <label for="address">Delivery address *</label>
+          <textarea id="address" required minlength="5" rows="3" placeholder="Street, area, city"></textarea>
+
+          <label for="phone">Phone number *</label>
+          <input id="phone" required pattern="[0-9+\-\s]{8,18}" placeholder="Phone number">
+
+          <!-- خيارات طريقة الدفع -->
+          <fieldset>
+            <legend>Payment method</legend>
+            <label class="radio">
+              <input type="radio" name="payment" value="Cash on delivery" checked> Cash on delivery (demo)
+            </label>
+            <label class="radio">
+              <input type="radio" name="payment" value="Demo card"> Demo card (no real payment)
+            </label>
+          </fieldset>
+
+          <p class="note">🔒 Learning demo only. Do not enter real card details.</p>
+          
+          <button class="btn wide" type="submit">Place order</button>
+          
+          <p id="checkoutMessage" class="message"></p>
+        </form>
+      </section>
+
+      <!-- قسم ملخص الطلب -->
+      <aside class="panel">
+        <h2>Order summary</h2>
+        
+        <!-- عناصر السلة -->
+        <div id="orderItems"></div>
+        
+        <div class="line">
+          <span>Subtotal</span>
+          <b id="orderSubtotal">0 EGP</b>
+        </div>
+        
+        <div class="line">
+          <span>Discount</span>
+          <b id="orderDiscount">0 EGP</b>
+        </div>
+        
+        <div class="line total">
+          <span>Total</span>
+          <b id="orderTotal">0 EGP</b>
+        </div>
+        
+        <a class="back" href="cart.html">← Back to cart</a>
+      </aside>
+
+    </div>
+
+    <!-- قسم رسالة نجاح الطلب (مخفي افتراضياً) -->
+    <section id="success" class="success hidden">
+      <div class="big">✅</div>
+      <div>
+        <h2>Order placed successfully!</h2>
+        <p id="successText"></p>
+        <a class="btn" href="products.html">Back to store</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= تذييل الصفحة ================= -->
+  <footer>Mini Store • JavaScript learning project</footer>
+
+</body>
+</html>
